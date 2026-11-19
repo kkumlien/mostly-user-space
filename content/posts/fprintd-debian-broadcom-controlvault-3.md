@@ -138,8 +138,10 @@ PAM: `libpam-fprintd` ships a pam-auth-update profile. Run `sudo pam-auth-update
 |---|---|---|
 | Verify | `fprintd-verify` | `verify-match (done)` |
 | sudo | `sudo -kv` | Prompts for the finger straight away |
-| Lock screen | Lock, touch the sensor (Enter on the empty password field first, if needed) | Unlocks |
-| Login screen | Log out, touch the sensor (Enter on the empty password field first, if needed) | Logged in successfully |
+| Lock screen | Lock, touch the sensor | Unlocks screen |
+| Login screen | Log out, touch the sensor | Logs in user |
+
+If the lock or login screen doesn't react to the finger, press Enter on the empty password field first to start the fingerprint prompt. Some greeters and screen lockers won't submit an empty field: type any character, then press Enter.
 
 ## Hold
 
