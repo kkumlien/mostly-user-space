@@ -82,9 +82,15 @@ curl -fL --remote-name-all \
   http://archive.ubuntu.com/ubuntu/pool/main/libf/libfprint/libfprint-2-2_1.95.1+tod1-0ubuntu2_amd64.deb \
   http://archive.ubuntu.com/ubuntu/pool/main/libf/libfprint/libfprint-2-tod1_1.95.1+tod1-0ubuntu2_amd64.deb \
   http://dell.archive.canonical.com/updates/pool/public/libf/libfprint-2-tod1-broadcom/libfprint-2-tod1-broadcom_5.12.018-0ubuntu1~22.04.01_amd64.deb
-echo "c2b0822ce0a0b7b916c77259445b7fa06ea200f1204b5c62d01d3203db8b7e6a  libfprint-2-tod1-broadcom_5.12.018-0ubuntu1~22.04.01_amd64.deb" | sha256sum -c
+printf '%s\n' \
+  "aa09cc1ac94608ac1dcaca0bfda0b172a466b6d6ad99a2fc8f5477c23222842a  libfprint-2-2_1.95.1+tod1-0ubuntu2_amd64.deb" \
+  "aad2e14758121dede1d30aafed754374c7716f735e58074105eded2fb1c8ab9e  libfprint-2-tod1_1.95.1+tod1-0ubuntu2_amd64.deb" \
+  "c2b0822ce0a0b7b916c77259445b7fa06ea200f1204b5c62d01d3203db8b7e6a  libfprint-2-tod1-broadcom_5.12.018-0ubuntu1~22.04.01_amd64.deb" \
+  | sha256sum -c
 sudo apt install -y fprintd libpam-fprintd ./*.deb
 ```
+
+Both pools are plain HTTP, so the checksums above are what protects the download. Checked on 19 November 2026: the two Ubuntu hashes against Ubuntu's GPG-signed resolute-updates index, the Broadcom hash against the same deb downloaded in July 2026. Stop if any line doesn't say `OK`.
 
 - The Ubuntu build number moves with Ubuntu's stable release updates (SRUs): if the download 404s, take the current resolute one from the [Ubuntu pool](http://archive.ubuntu.com/ubuntu/pool/main/libf/libfprint/).
 - Copy the debs somewhere persistent: `/tmp` doesn't survive a reboot, and reinstalling is a plain `apt install ./…`.
