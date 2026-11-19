@@ -1,5 +1,6 @@
 base_url = "https://kkumlien.github.io/mostly-user-space"
 title = "Mostly User Space"
+description = "A tech blog by Kamal Kumlien"
 default_language = "en"
 author = "Kamal Kumlien"
 
@@ -18,4 +19,7 @@ light_theme = "github-light"
 dark_theme = "github-dark"
 
 [extra]
+# Header tagline; the author's name links to author_url.
+tagline = "A tech blog by"
+author_url = "https://github.com/kkumlien"
 source_url = "https://github.com/kkumlien/mostly-user-space"
