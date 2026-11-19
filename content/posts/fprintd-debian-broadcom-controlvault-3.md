@@ -87,7 +87,7 @@ printf '%s\n' \
   "aad2e14758121dede1d30aafed754374c7716f735e58074105eded2fb1c8ab9e  libfprint-2-tod1_1.95.1+tod1-0ubuntu2_amd64.deb" \
   "c2b0822ce0a0b7b916c77259445b7fa06ea200f1204b5c62d01d3203db8b7e6a  libfprint-2-tod1-broadcom_5.12.018-0ubuntu1~22.04.01_amd64.deb" \
   | sha256sum -c
-sudo apt install -y fprintd libpam-fprintd ./*.deb
+sudo apt install fprintd libpam-fprintd ./*.deb
 ```
 
 Both pools are plain HTTP, so the checksums above are what protects the download. Checked on 19 November 2026: the two Ubuntu hashes against Ubuntu's GPG-signed resolute-updates index, the Broadcom hash against the same deb downloaded in July 2026. Stop if any line doesn't say `OK`.
