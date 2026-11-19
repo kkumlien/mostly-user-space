@@ -74,6 +74,25 @@ pre {
   line-height: 1.45;
 }
 
+.code-block { position: relative; }
+.code-block .copy {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  padding: 0.15rem 0.5rem;
+  font: inherit;
+  font-size: 0.75rem;
+  color: var(--muted);
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.code-block:hover .copy, .code-block .copy:focus-visible { opacity: 1; }
+@media (hover: none) { .code-block .copy { opacity: 1; } }
+
 table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; display: block; overflow-x: auto; }
 th, td { border: 1px solid var(--rule); padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
 th { background: var(--code-bg); }

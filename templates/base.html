@@ -24,5 +24,27 @@
       <a href="{{ config.extra.source_url }}">Source</a>
     </p>
   </footer>
+  <script>
+    // Copy button on every code block; hidden without JavaScript.
+    for (const pre of document.querySelectorAll("pre")) {
+      const button = document.createElement("button");
+      button.className = "copy";
+      button.type = "button";
+      button.textContent = "Copy";
+      button.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(pre.querySelector("code")?.innerText ?? pre.innerText);
+          button.textContent = "Copied";
+        } catch {
+          button.textContent = "Failed";
+        }
+        setTimeout(() => { button.textContent = "Copy"; }, 1500);
+      });
+      const wrapper = document.createElement("div");
+      wrapper.className = "code-block";
+      pre.replaceWith(wrapper);
+      wrapper.append(pre, button);
+    }
+  </script>
 </body>
 </html>
