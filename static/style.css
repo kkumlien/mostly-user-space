@@ -2,9 +2,9 @@
   color-scheme: light dark;
   --fg: light-dark(#1f2328, #e6e6e6);
   --muted: light-dark(#59636e, #a0a7b0);
-  --bg: light-dark(#ffffff, #2a2d33);
-  --code-bg: light-dark(#f6f8fa, #22252a);
-  --rule: light-dark(#d1d9e0, #4a5059);
+  --bg: light-dark(#f4f7fb, #2a2d33);
+  --code-bg: light-dark(#e8edf4, #22252a);
+  --rule: light-dark(#cdd6e1, #4a5059);
   --link: light-dark(#0b5cad, #6cb6ff);
 }
 
