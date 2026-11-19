@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+  {% block description %}{% if config.description %}<meta name="description" content="{{ config.description }}">{% endif %}{% endblock description %}
+  <link rel="stylesheet" href="{{ get_url(path='style.css') }}">
+  <link rel="alternate" type="application/atom+xml" title="{{ config.title }}" href="{{ get_url(path='atom.xml', trailing_slash=false) }}">
+</head>
+<body>
+  <header class="site">
+    <a class="site-title" href="{{ config.base_url }}/">{{ config.title }}</a>
+    {% if config.description %}<span class="tagline">{{ config.description }}</span>{% endif %}
+  </header>
+  <main>
+    {% block content %}{% endblock content %}
+  </main>
+  <footer class="site">
+    <p>
+      Posts <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>,
+      code <a href="{{ config.extra.source_url }}/blob/main/LICENSE">MIT</a> ·
+      <a href="{{ get_url(path='atom.xml', trailing_slash=false) }}">Feed</a> ·
+      <a href="{{ config.extra.source_url }}">Source</a>
+    </p>
+  </footer>
+</body>
+</html>

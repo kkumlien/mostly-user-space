@@ -1,0 +1,21 @@
+base_url = "https://kkumlien.github.io/mostly-user-space"
+title = "Mostly User Space"
+default_language = "en"
+author = "Kamal Kumlien"
+
+compile_sass = false
+build_search_index = false
+generate_feeds = true
+feed_filenames = ["atom.xml"]
+
+[markdown]
+insert_anchor_links = "right"
+external_links_target_blank = false
+
+[markdown.highlighting]
+error_on_missing_language = true
+light_theme = "github-light"
+dark_theme = "github-dark"
+
+[extra]
+source_url = "https://github.com/kkumlien/mostly-user-space"

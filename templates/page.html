@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} · {{ config.title }}{% endblock title %}
+{% block description %}{% set desc = page.description | default(value=config.description) %}{% if desc %}<meta name="description" content="{{ desc }}">{% endif %}{% endblock description %}
+
+{% block content %}
+<article>
+  <h1>{{ page.title }}</h1>
+  <p class="meta">
+    <time datetime="{{ page.date }}">{{ page.date | date(format="%-d %B %Y") }}</time>
+    {% if page.updated %} · updated <time datetime="{{ page.updated }}">{{ page.updated | date(format="%-d %B %Y") }}</time>{% endif %}
+  </p>
+  {{ page.content | safe }}
+</article>
+{% endblock content %}

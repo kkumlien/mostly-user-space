@@ -1,0 +1,80 @@
+:root {
+  color-scheme: light dark;
+  --fg: light-dark(#1f2328, #e6e6e6);
+  --muted: light-dark(#59636e, #a0a7b0);
+  --bg: light-dark(#ffffff, #2a2d33);
+  --code-bg: light-dark(#f6f8fa, #22252a);
+  --rule: light-dark(#d1d9e0, #4a5059);
+  --link: light-dark(#0b5cad, #6cb6ff);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0 auto;
+  max-width: 46rem;
+  padding: 1.5rem 1rem 3rem;
+  font: 1.0625rem/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif;
+  color: var(--fg);
+  background: var(--bg);
+}
+
+a { color: var(--link); }
+
+header.site {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 2rem;
+}
+.site-title { font-weight: 700; font-size: 1.25rem; text-decoration: none; color: var(--fg); }
+.tagline { color: var(--muted); font-size: 0.9rem; }
+
+footer.site {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 0.25rem; }
+h2 { font-size: 1.35rem; margin-top: 2.25rem; }
+h3 { font-size: 1.1rem; }
+.zola-anchor { opacity: 0; margin-left: 0.4rem; text-decoration: none; }
+h2:hover .zola-anchor, h3:hover .zola-anchor { opacity: 0.6; }
+
+.meta { color: var(--muted); margin-top: 0; }
+
+.post-list { list-style: none; padding: 0; }
+.post-list li { margin-bottom: 1.5rem; }
+.post-list time { display: block; color: var(--muted); font-size: 0.875rem; }
+.post-list a { font-size: 1.15rem; font-weight: 600; }
+.post-list p { margin: 0.25rem 0 0; }
+
+code {
+  font-family: ui-monospace, "JetBrains Mono", "Cascadia Code", Menlo, Consolas, monospace;
+  font-size: 0.9em;
+}
+:not(pre) > code {
+  background: var(--code-bg);
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
+}
+pre {
+  background: var(--code-bg) !important;
+  padding: 0.85rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--rule);
+  overflow-x: auto;
+  line-height: 1.45;
+}
+
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; display: block; overflow-x: auto; }
+th, td { border: 1px solid var(--rule); padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+th { background: var(--code-bg); }
+
+blockquote { margin: 1rem 0; padding: 0 1rem; border-left: 3px solid var(--rule); color: var(--muted); }
