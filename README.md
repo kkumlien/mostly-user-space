@@ -10,7 +10,7 @@ zola serve
 
 ## Layout
 
-- `content/posts/`: one Markdown file per post, front matter in TOML (`+++`)
+- `content/`: one Markdown file per post, named `YYYY-MM-DD-slug.md` (the date goes into the URL and the byline), front matter in TOML (`+++`)
 - `templates/`: minimal Tera templates, no theme
 - `static/style.css`: the only stylesheet
 

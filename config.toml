@@ -10,7 +10,7 @@ generate_feeds = true
 feed_filenames = ["atom.xml"]
 
 [slugify]
-# Keep the date prefix of post filenames in the URL: /posts/YYYY-MM-DD-slug/
+# Keep the date prefix of post filenames in the URL: /YYYY-MM-DD-slug/
 paths_keep_dates = true
 
 [markdown]
