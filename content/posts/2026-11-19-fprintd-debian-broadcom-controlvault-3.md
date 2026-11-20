@@ -1,6 +1,5 @@
 +++
 title = "Fingerprint (fprintd) authentication on Debian with Dell's Broadcom ControlVault 3"
-date = 2026-11-19
 description = "Getting the Broadcom ControlVault 3 fingerprint reader (0a5c:5843) working on Debian forky with Ubuntu's libfprint TOD build and Broadcom's 5.12.018 driver."
 +++
 

@@ -9,6 +9,10 @@ build_search_index = false
 generate_feeds = true
 feed_filenames = ["atom.xml"]
 
+[slugify]
+# Keep the date prefix of post filenames in the URL: /posts/YYYY-MM-DD-slug/
+paths_keep_dates = true
+
 [markdown]
 insert_anchor_links = "right"
 external_links_target_blank = false
